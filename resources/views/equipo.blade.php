@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.menu1')
+
+@section('content')
 
 <head>
     <meta charset="UTF-8">
@@ -150,25 +151,7 @@
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('welcome') }}">SmartTechSolutions</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('equipo') }}">Equipo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('historia') }}">Historia</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
 
     <!-- Sección principal (Hero) -->
     <header class="hero text-center">
@@ -227,4 +210,4 @@
     @vite('resources/js/app.js')
 </body>
 
-</html>
+@endsection

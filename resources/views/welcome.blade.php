@@ -118,11 +118,11 @@
     <!-- Sección principal (Hero) -->
     <header class="hero text-center">
         <div class="container">
-            <h1 class="display-4">Energía Limpia para un Futuro Sostenible</h1>
+            <h1 class="display-4"><img src="{{ asset('IMG/LogoSTS.png') }}" class="w-25"></h1>
             <p class="lead">Soluciones innovadoras en energía limpia y cuidado del medio ambiente</p>
             @if (Route::has('login'))
             @auth
-            <a href="{{ route('register') }}" class="btn btn-primary btn-lg">Entrar</a>
+            <a href="{{ route('home') }}" class="btn btn-primary btn-lg">Entrar</a>
             @else
             <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Iniciar Sesion</a>
             @endauth

@@ -2,21 +2,31 @@
 
 @section('content')
 
-<!-- Estilos personalizados -->
 <style>
-    #tabla-productos {
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    #tabla-productos th {
-        background-color: #0d6efd;
+    .hero {
+        background: linear-gradient(to right, #28a745, #218838);
         color: white;
-        vertical-align: middle;
+        padding: 5rem 1rem;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
     }
 
-    #tabla-productos td {
-        vertical-align: middle;
+    .hero h1 {
+        font-weight: bold;
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.95;
+    }
+
+    .info-card {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
     }
 
     #tabla-productos img {
@@ -25,38 +35,51 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .hero {
-        background: linear-gradient(to right, #0d6efd, #6610f2);
+    #tabla-productos th {
+        background-color: #28a745;
         color: white;
-        padding: 4rem 1rem;
-        text-align: center;
-        border-radius: 0 0 30px 30px;
-    }
-
-    .hero h1 {
-        font-weight: bold;
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        opacity: 0.9;
     }
 </style>
 
-<!-- Hero de bienvenida -->
+<!-- Hero Principal -->
 <section class="hero">
     <div class="container">
-        <h1>Bienvenido a SmartTechSolutions</h1>
-        <p>Explora productos de tecnología al mejor precio, con calidad garantizada.</p>
-        <a href="#productos" class="btn btn-light mt-3">Ver catálogo</a>
+        <h1>Generadores de Energía Limpia</h1>
+        <p>Ofrecemos productos innovadores para la generación de energía limpia y sostenible.</p>
+        <a href="#productos" class="btn btn-light btn-lg mt-4">Ver productos</a>
     </div>
 </section>
 
-<!-- Tabla de productos -->
+<!-- Beneficios / Mensaje institucional -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card p-4 shadow-sm info-card">
+                    <h5 class="fw-bold">Energía Sustentable</h5>
+                    <p>Contribuye al planeta utilizando fuentes de energía que no contaminan.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-4 shadow-sm info-card">
+                    <h5 class="fw-bold">Tecnología Innovadora</h5>
+                    <p>Usamos lo último en sistemas solares y generadores híbridos.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-4 shadow-sm info-card">
+                    <h5 class="fw-bold">Ahorro Garantizado</h5>
+                    <p>Reduce tu factura eléctrica desde el primer mes con nuestros productos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tabla de Productos -->
 <section id="productos" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4 fw-semibold">Productos destacados</h2>
+        <h2 class="text-center fw-bold mb-5">Nuestros Generadores</h2>
 
         <div class="table-responsive">
             <table class="table table-hover table-bordered align-middle shadow-sm" id="tabla-productos">
@@ -67,71 +90,27 @@
                         <th>Descripción</th>
                         <th>Precio</th>
                         <th>Stock</th>
-                     
+                      
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Productos simulados -->
+                    @foreach([
+                        ['nombre' => 'Generador Solar Portátil EcoPower 500W', 'desc' => 'Ideal para camping, hogares y oficinas pequeñas.', 'precio' => 1250, 'stock' => 20, 'img' => 'IMG/s1.webp'],
+                        ['nombre' => 'Estación de Energía Solar 1000W Pro', 'desc' => 'Alta capacidad, batería de litio y panel solar incluido.', 'precio' => 2300, 'stock' => 12, 'img' => 'IMG/s2.jpg'],
+                        ['nombre' => 'Kit Solar Residencial 3KW', 'desc' => 'Ideal para casas completas, incluye inversor y paneles.', 'precio' => 8400, 'stock' => 5, 'img' => 'IMG/s3.webp'],
+                        ['nombre' => 'Generador Eólico Compacto 800W', 'desc' => 'Aprovecha el viento para generar energía sostenible.', 'precio' => 1900, 'stock' => 10, 'img' => 'IMG/s4.jpg'],
+                        ['nombre' => 'Sistema Solar + Eólico Híbrido 1.5KW', 'desc' => 'Lo mejor de ambos mundos en un solo sistema.', 'precio' => 4600, 'stock' => 6, 'img' => 'IMG/s5.avif'],
+                        ['nombre' => 'Panel Solar Flexible 200W', 'desc' => 'Ligero, portátil y resistente para superficies curvas.', 'precio' => 750, 'stock' => 30, 'img' => 'IMG/s6.jpg'],
+                    ] as $i => $producto)
                     <tr>
-                        <td class="text-center">
-                            <img src="IMG/P1.jpg" width="70" height="70">
-                        </td>
-                        <td>Laptop HP ProBook</td>
-                        <td>Equipo profesional con procesador Intel i5 y 8GB de RAM.</td>
-                        <td class="fw-semibold text-success">$1,899.00</td>
-                        <td>15</td>
-                       
+                        <td class="text-center"><img src="{{ $producto['img'] }}" alt="producto" width="70" height="70"></td>
+                        <td>{{ $producto['nombre'] }}</td>
+                        <td>{{ $producto['desc'] }}</td>
+                        <td class="fw-semibold text-success">${{ number_format($producto['precio'], 2) }}</td>
+                        <td>{{ $producto['stock'] }}</td>
+                    
                     </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img src="IMG/P2.webp" width="70" height="70">
-                        </td>
-                        <td>Mouse Gamer RGB</td>
-                        <td>Mouse con retroiluminación, 6 botones programables y alta precisión.</td>
-                        <td class="fw-semibold text-success">$299.00</td>
-                        <td>40</td>
-                      
-                    </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img src="IMG/P3.avif" width="70" height="70">
-                        </td>
-                        <td>Monitor LG 24"</td>
-                        <td>Pantalla IPS Full HD, ideal para oficina y multimedia.</td>
-                        <td class="fw-semibold text-success">$1,249.00</td>
-                        <td>8</td>
-                        
-                    </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img src="IMG/P4.jpg" width="70" height="70">
-                        </td>
-                        <td>Audífonos Inalámbricos</td>
-                        <td>Conexión Bluetooth 5.0 y hasta 10 horas de batería.</td>
-                        <td class="fw-semibold text-success">$499.00</td>
-                        <td>25</td>
-                        
-                    </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img src="IMG/P5.jpg" width="70" height="70">
-                        </td>
-                        <td>Teclado Mecánico Redragon</td>
-                        <td>Switches rojos silenciosos, RGB y estructura metálica.</td>
-                        <td class="fw-semibold text-success">$899.00</td>
-                        <td>30</td>
-                       
-                    </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img src="IMG/P6.jpg" width="70" height="70">
-                        </td>
-                        <td>Cámara Web Full HD</td>
-                        <td>Videollamadas en alta definición, micrófono integrado.</td>
-                        <td class="fw-semibold text-success">$379.00</td>
-                        <td>18</td>
-                        
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -139,13 +118,13 @@
 </section>
 
 <!-- Llamado a la acción -->
-<section class="py-5 bg-primary text-white text-center mt-5">
+<section class="py-5 bg-success text-white text-center">
     <div class="container">
-        <h2 class="fw-bold">¡Compra ahora y recibe envíos gratis!</h2>
-        <p class="lead">SmartTechSolutions te acompaña en tu camino digital.</p>
+        <h2 class="fw-bold">¡Haz el cambio hacia la energía limpia!</h2>
+        <p class="lead">Contáctanos y recibe asesoría gratuita para tu proyecto energético.</p>
         
+      
     </div>
 </section>
 
 @endsection
-

@@ -35,7 +35,7 @@
                             <p class="card-text">Visualiza o modifica el registro de clientes de la tienda</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <a href="{{ route('clientes.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>
@@ -53,7 +53,7 @@
                             <p class="card-text">Visualiza o modifica los pedidos realizados a la tienda en linea.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <a href="{{ route('pedidos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>
@@ -71,7 +71,7 @@
                             <p class="card-text">Visualiza o modifica los productos de la tienda en linea y sus existencias</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <a href="{{ route('productos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>
@@ -89,7 +89,7 @@
                             <p class="card-text">Visualiza o modifica las entregas de la tienda haci como ferificar de entregado</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <a href="{{ route('entregas.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>
@@ -107,7 +107,7 @@
                             <p class="card-text">Visualiza los pagos realizados por los usuarios o clientes de la tienda</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <a href="{{ route('pagos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>
@@ -125,7 +125,7 @@
                             <p class="card-text">Visualiza los detalles de los pedidos realizados de los clientes.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <a href="{{ route('detalles_pedido.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>

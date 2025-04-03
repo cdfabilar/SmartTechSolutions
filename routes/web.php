@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\EntregaController;
+use App\Http\Controllers\DetallePedidoController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,3 +34,13 @@ Route::get('/dashboard', function () {
     // Redirigir si no es administrador o no está autenticado
     return redirect('/')->with('error', 'No tienes acceso a esta página.');
 })->name('admin.dashboard');
+
+Route::resource('clientes', ClienteController::class);
+Route::resource('productos', ProductoController::class);
+Route::resource('pedidos', PedidoController::class);
+Route::resource('pagos', PagoController::class);
+Route::resource('entregas', EntregaController::class);
+Route::resource('detalles_pedido', DetallePedidoController::class);
+use App\Http\Controllers\HomeController;
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

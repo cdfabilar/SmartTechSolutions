@@ -119,7 +119,7 @@
                 <div class="card shadow-sm">
                     <img src="{{ asset('IMG/CardsADM/DetallesPedido.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <title>Clientes1</title>
-                    <rect class="fs-6 m-1">Deatlles de pedido</text>
+                    <rect class="fs-6 m-1">Detalles de pedido</text>
                         </img>
                         <div class="card-body">
                             <p class="card-text">Visualiza los detalles de los pedidos realizados de los clientes.</p>

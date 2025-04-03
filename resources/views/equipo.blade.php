@@ -164,22 +164,22 @@
     <!-- Sección del equipo -->
     <section class="team-section text-center">
         <div class="container h-auto">
-            <h2>El Equipo Detrás de SmartTechSolutions</h2>
+            <h2>Estructura organizacional jerárquica</h2>
             <div class="row">
                 <!-- Miembro del equipo 1: Carlos Daniel Fabila Reyes -->
                 <div class="col-md-4">
                     <div class="card team-member">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Carlos Daniel Fabila Reyes">
+                        <img src="IMG/CARLOS.jpeg" class="card-img-top" alt="">
                         <div class="card-body">
                             <h4 class="card-title">Carlos Daniel Fabila Reyes</h4>
-                            <p class="card-text">CEO y Fundador</p>
+                            <p class="card-text">CEO</p>
                         </div>
                     </div>
                 </div>
                 <!-- Miembro del equipo 2: Diego Rebollar Cacique -->
                 <div class="col-md-4">
                     <div class="card team-member">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Diego Rebollar Cacique">
+                        <img src="IMG/DIEGO.jpeg" class="card-img-top" alt="Diego Rebollar Cacique">
                         <div class="card-body">
                             <h4 class="card-title">Diego Rebollar Cacique</h4>
                             <p class="card-text">Director de Operaciones</p>
@@ -189,7 +189,7 @@
                 <!-- Miembro del equipo 3: Alberto Jordán Samanó -->
                 <div class="col-md-4">
                     <div class="card team-member">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Alberto Jordán Samanó">
+                        <img src="IMG/JORDAN.jpeg" class="card-img-top" alt="Alberto Jordán Samanó">
                         <div class="card-body">
                             <h4 class="card-title">Alberto Jordán Samanó</h4>
                             <p class="card-text">Director de Tecnología</p>

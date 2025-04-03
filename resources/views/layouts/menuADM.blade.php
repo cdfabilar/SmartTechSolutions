@@ -20,18 +20,19 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm  w-100">
+        <nav class="navbar navbar-light bg-primary shadow-sm  w-100">
             <div class="container">
 
                 <img src="{{ asset('IMG/AnimacionSTS.gif') }}" class="w-25 h-25" alt="...">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
 
 
                 <span class="btn btn-primary btn-lg nav-item dropdown">
+                    <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">Inicio Administracion</a>
+                </span>
+
+                <span class="btn btn-primary btn-lg nav-item dropdown">
+
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menuADM')
 
 @section('content')
 <div class="container">
@@ -13,9 +13,9 @@
             <select name="id_pedido" class="form-control">
                 <option value="">-- Seleccionar --</option>
                 @foreach($pedidos as $pedido)
-                    <option value="{{ $pedido->id_pedido }}" {{ $pedido->id_pedido == $entrega->id_pedido ? 'selected' : '' }}>
-                        {{ $pedido->id_pedido }}
-                    </option>
+                <option value="{{ $pedido->id_pedido }}" {{ $pedido->id_pedido == $entrega->id_pedido ? 'selected' : '' }}>
+                    {{ $pedido->id_pedido }}
+                </option>
                 @endforeach
             </select>
         </div>
@@ -34,7 +34,7 @@
             <label class="form-label">Estado:</label>
             <select name="estado" class="form-control" required>
                 @foreach(['Pendiente', 'En Ruta', 'Entregado'] as $estado)
-                    <option value="{{ $estado }}" {{ $estado == $entrega->estado ? 'selected' : '' }}>{{ $estado }}</option>
+                <option value="{{ $estado }}" {{ $estado == $entrega->estado ? 'selected' : '' }}>{{ $estado }}</option>
                 @endforeach
             </select>
         </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menuADM')
 
 @section('content')
 <div class="container">
@@ -13,9 +13,9 @@
             <select name="id_pedido" class="form-control">
                 <option value="">-- Seleccionar --</option>
                 @foreach($pedidos as $pedido)
-                    <option value="{{ $pedido->id_pedido }}" {{ $pedido->id_pedido == $pago->id_pedido ? 'selected' : '' }}>
-                        {{ $pedido->id_pedido }}
-                    </option>
+                <option value="{{ $pedido->id_pedido }}" {{ $pedido->id_pedido == $pago->id_pedido ? 'selected' : '' }}>
+                    {{ $pedido->id_pedido }}
+                </option>
                 @endforeach
             </select>
         </div>
@@ -24,9 +24,9 @@
             <label class="form-label">Método de Pago:</label>
             <select name="metodo_pago" class="form-control" required>
                 @foreach(['Tarjeta de Crédito', 'Tarjeta de Débito', 'PayPal'] as $metodo)
-                    <option value="{{ $metodo }}" {{ $metodo == $pago->metodo_pago ? 'selected' : '' }}>
-                        {{ $metodo }}
-                    </option>
+                <option value="{{ $metodo }}" {{ $metodo == $pago->metodo_pago ? 'selected' : '' }}>
+                    {{ $metodo }}
+                </option>
                 @endforeach
             </select>
         </div>

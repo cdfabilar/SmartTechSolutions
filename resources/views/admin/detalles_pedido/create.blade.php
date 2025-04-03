@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menuADM')
 
 @section('content')
 <div class="container">
@@ -12,7 +12,7 @@
             <select name="id_pedido" class="form-control" required>
                 <option value="">-- Seleccionar --</option>
                 @foreach($pedidos as $pedido)
-                    <option value="{{ $pedido->id_pedido }}">{{ $pedido->id_pedido }}</option>
+                <option value="{{ $pedido->id_pedido }}">{{ $pedido->id_pedido }}</option>
                 @endforeach
             </select>
         </div>
@@ -22,7 +22,7 @@
             <select name="id_producto" class="form-control" required>
                 <option value="">-- Seleccionar --</option>
                 @foreach($productos as $producto)
-                    <option value="{{ $producto->id_producto }}">{{ $producto->nombre }}</option>
+                <option value="{{ $producto->id_producto }}">{{ $producto->nombre }}</option>
                 @endforeach
             </select>
         </div>

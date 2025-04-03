@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.menuADM')
 
 @section('content')
 <div class="container">
     <h2>Listado de Pedidos</h2>
 
     @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+    <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
     <a href="{{ route('pedidos.create') }}" class="btn btn-primary mb-3">Nuevo Pedido</a>

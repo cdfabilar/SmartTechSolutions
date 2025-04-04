@@ -20,7 +20,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
             <div class="container">
 
                 <a class="navbar-brand text-white" href="{{ route('welcome') }}"><img src="{{ asset('IMG/AnimacionSTS.gif') }}" class="w-25 h-25" alt="..."></a>
@@ -74,7 +74,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>

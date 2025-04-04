@@ -3,12 +3,16 @@
 @section('content')
 
 <style>
+    main {
+        background: rgb(229, 255, 235);
+    }
+
     .hero {
         background: linear-gradient(to right, #28a745, #218838);
         color: white;
         padding: 5rem 1rem;
         text-align: center;
-        border-radius: 0 0 30px 30px;
+        border-radius: 0 0 300px 300px;
     }
 
     .hero h1 {
@@ -51,7 +55,7 @@
 </section>
 
 <!-- Beneficios / Mensaje institucional -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-4 mb-4">
@@ -122,5 +126,6 @@
 
     </div>
 </section>
+
 
 @endsection

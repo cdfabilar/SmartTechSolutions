@@ -32,7 +32,7 @@
     #tabla-productos img {
         object-fit: cover;
         border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     #tabla-productos th {
@@ -81,39 +81,35 @@
     <div class="container">
         <h2 class="text-center fw-bold mb-5">Nuestros Generadores</h2>
 
-        <div class="table-responsive">
-            <table class="table table-hover table-bordered align-middle shadow-sm" id="tabla-productos">
-                <thead class="text-center">
-                    <tr>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                      
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach([
-                        ['nombre' => 'Generador Solar Portátil EcoPower 500W', 'desc' => 'Ideal para camping, hogares y oficinas pequeñas.', 'precio' => 1250, 'stock' => 20, 'img' => 'IMG/s1.webp'],
-                        ['nombre' => 'Estación de Energía Solar 1000W Pro', 'desc' => 'Alta capacidad, batería de litio y panel solar incluido.', 'precio' => 2300, 'stock' => 12, 'img' => 'IMG/s2.jpg'],
-                        ['nombre' => 'Kit Solar Residencial 3KW', 'desc' => 'Ideal para casas completas, incluye inversor y paneles.', 'precio' => 8400, 'stock' => 5, 'img' => 'IMG/s3.webp'],
-                        ['nombre' => 'Generador Eólico Compacto 800W', 'desc' => 'Aprovecha el viento para generar energía sostenible.', 'precio' => 1900, 'stock' => 10, 'img' => 'IMG/s4.jpg'],
-                        ['nombre' => 'Sistema Solar + Eólico Híbrido 1.5KW', 'desc' => 'Lo mejor de ambos mundos en un solo sistema.', 'precio' => 4600, 'stock' => 6, 'img' => 'IMG/s5.avif'],
-                        ['nombre' => 'Panel Solar Flexible 200W', 'desc' => 'Ligero, portátil y resistente para superficies curvas.', 'precio' => 750, 'stock' => 30, 'img' => 'IMG/s6.jpg'],
-                    ] as $i => $producto)
-                    <tr>
-                        <td class="text-center"><img src="{{ $producto['img'] }}" alt="producto" width="70" height="70"></td>
-                        <td>{{ $producto['nombre'] }}</td>
-                        <td>{{ $producto['desc'] }}</td>
-                        <td class="fw-semibold text-success">${{ number_format($producto['precio'], 2) }}</td>
-                        <td>{{ $producto['stock'] }}</td>
-                    
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach($productos as $producto)
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm product-card">
+                    <img src="{{ asset('storage/' . ($producto->imagen ?? 'productos/default.jpg')) }}"
+                        class="card-img-top img-fluid"
+                        alt="{{ $producto->nombre }}"
+                        style="object-fit: cover; height: 200px;">
+
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-success fw-semibold">{{ $producto->nombre }}</h5>
+                        <p class="text-muted small mb-2">Stock: {{ $producto->stock }}</p>
+                        <p class="card-text text-secondary small" style="min-height: 60px;">
+                            {{ Str::limit($producto->descripcion, 100) }}
+                        </p>
+
+                        <div class="mt-auto">
+                            <p class="fw-bold text-brown h5">${{ number_format($producto->precio, 2) }}</p>
+
+                            <a href="#" class="btn btn-success btn-sm w-100 mt-2">
+                                Ver más
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
+
     </div>
 </section>
 
@@ -122,8 +118,8 @@
     <div class="container">
         <h2 class="fw-bold">¡Haz el cambio hacia la energía limpia!</h2>
         <p class="lead">Contáctanos y recibe asesoría gratuita para tu proyecto energético.</p>
-        
-      
+
+
     </div>
 </section>
 

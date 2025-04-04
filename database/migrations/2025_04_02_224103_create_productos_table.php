@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id('id_producto');
-            $table->string('nombre', 100);
+            $table->string('nombre');
             $table->text('descripcion')->nullable();
             $table->decimal('precio', 10, 2);
             $table->integer('stock');
-            $table->timestamp('fecha_agregado')->useCurrent();
+            $table->string('imagen');  // Aquí debe ir la columna para la imagen
+            $table->timestamp('fecha_agregado');
+            $table->timestamps();
         });
     }
 

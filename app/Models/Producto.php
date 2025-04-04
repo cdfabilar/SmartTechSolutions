@@ -18,6 +18,14 @@ class Producto extends Model
         'descripcion',
         'precio',
         'stock',
+        'imagen',
         'fecha_agregado',
     ];
+
+    public function setImagenAttribute($value)
+    {
+        if (is_file($value)) {
+            $this->attributes['imagen'] = $value->store('productos', 'public');
+        }
+    }
 }

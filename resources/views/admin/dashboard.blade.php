@@ -53,7 +53,11 @@
                             <p class="card-text">Visualiza o modifica los pedidos realizados a la tienda en linea.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
+<<<<<<< HEAD
                                     <a href="{{ route('pedidos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
+=======
+                                    <button type="button" a href="#clientes" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+>>>>>>> 33f9eb780642802c233002468913008e4d3866ea
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>

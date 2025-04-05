@@ -53,7 +53,7 @@
                             <p class="card-text">Visualiza o modifica los pedidos realizados a la tienda en linea.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Mostrar</button>
+                                    <button type="button" a href="#clientes" class="btn btn-sm btn-outline-secondary">Mostrar</button>
                                 </div>
                                 <small class="text-body-secondary"></small>
                             </div>

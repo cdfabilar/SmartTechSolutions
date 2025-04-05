@@ -48,7 +48,7 @@
 <!-- Hero Principal -->
 <section class="hero">
     <div class="container">
-        <h1>Generadores de Energía Limpia</h1>
+        <h1>Generadores de Energía Limpia </h1>
         <p>Ofrecemos productos innovadores para la generación de energía limpia y sostenible.</p>
         <a href="#productos" class="btn btn-light btn-lg mt-4">Ver productos</a>
     </div>

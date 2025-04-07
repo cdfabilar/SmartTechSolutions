@@ -43,7 +43,7 @@
             <!-- Sidebar -->
             <div class="bg-dark text-white p-3" style="width: 250px;">
                 <div class="text-center mb-3">
-                    <img src="{{ asset('IMG/LogoSTS.png') }}" alt="Admin" class="rounded-circle img-thumbnail" style="width: 100px; height: 100px;">
+                    <img src="{{ asset('IMG/usuario.png') }}" alt="Admin" class="rounded-circle img-thumbnail" style="width: 100px; height: 100px;">
                     <h5 class="mt-2">Administrador</h5>
                 </div>
                 <hr class="border-light">

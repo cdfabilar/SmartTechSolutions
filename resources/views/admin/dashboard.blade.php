@@ -2,145 +2,19 @@
 
 @section('content')
 
-
-
-
-<section class="py-5 text-center container">
-    <div class="row">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Administracion</h1>
-            <p class="lead text-body-secondary">
-
-                En esta ventana se administra el contenido de la pagina y la empresa para visualizacion de los usuarios
-                ademas de que se proporciona una registro de los usuarios y su actividad en la pagina.
-
+<div class="container py-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="display-5 fw-bold">¡Bienvenido, Administrador!</h1>
+            <p class="lead mt-3">
+                Este es el panel de control de <strong>Smart Tech Solutions</strong>. Desde aquí puedes gestionar
+                toda la información relacionada con la empresa: productos, pedidos, clientes, pagos y más.
             </p>
-        </div>
-    </div>
-</section>
-
-<div class="album py-3 bg-body-tertiary">
-
-    <div class="container">
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-            <div class="col text-center">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('IMG/CardsADM/Clientes.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Clientes</title>
-                    <rect class="fs-6 m-1">Clientes</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Visualiza o modifica el registro de clientes de la tienda</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('clientes.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
-                                </div>
-                                <small class="text-body-secondary"></small>
-                            </div>
-                        </div>
-                </div>
+            <div class="alert alert-primary mt-4" role="alert">
+                Utiliza el menú lateral para acceder a las distintas secciones del sistema.
             </div>
-
-            <div class="col text-center">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('IMG/CardsADM/Pedidos.png') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Clientes</title>
-                    <rect class="fs-6 m-1">Pedidos</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Visualiza o modifica los pedidos realizados a la tienda en linea.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-
-                                    <a href="{{ route('pedidos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
-
-
-                                </div>
-                                <small class="text-body-secondary"></small>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col text-center">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('IMG/CardsADM/Productos.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Clientes</title>
-                    <rect class="fs-6 m-1">Productos</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Visualiza o modifica los productos de la tienda en linea y sus existencias</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('productos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
-                                </div>
-                                <small class="text-body-secondary"></small>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col text-center">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('IMG/CardsADM/Entregas.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Clientes</title>
-                    <rect class="fs-6 m-1">Entregas</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Visualiza o modifica las entregas de la tienda haci como ferificar de entregado</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('entregas.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
-                                </div>
-                                <small class="text-body-secondary"></small>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col text-center">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('IMG/CardsADM/Pagos.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Clientes</title>
-                    <rect class="fs-6 m-1">Pagos</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Visualiza los pagos realizados por los usuarios o clientes de la tienda</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('pagos.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
-                                </div>
-                                <small class="text-body-secondary"></small>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col text-center">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('IMG/CardsADM/DetallesPedido.jpg') }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Clientes1</title>
-                    <rect class="fs-6 m-1">Detalles de pedido</text>
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Visualiza los detalles de los pedidos realizados de los clientes.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('detalles_pedido.index') }}" class="btn btn-sm btn-outline-secondary">Mostrar</a>
-                                </div>
-                                <small class="text-body-secondary"></small>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
-
-
-
 
 @endsection

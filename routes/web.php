@@ -8,22 +8,30 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\EntregaController;
 use App\Http\Controllers\DetallePedidoController;
+use App\Http\Controllers\HomeController;
 
-
+//Rutas Publicas para cualquier usuario
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
 Route::get('/equipo', function () {
     return view('equipo');
 })->name('equipo');
+
 Route::get('/historia', function () {
     return view('historia');
 })->name('historia');
 
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/catalogo/pedido/{id}', [HomeController::class, 'pedido'])->name('compra');
 
 // Ruta solo accesible por el admin
 Route::get('/dashboard', function () {
@@ -41,7 +49,3 @@ Route::resource('pedidos', PedidoController::class);
 Route::resource('pagos', PagoController::class);
 Route::resource('entregas', EntregaController::class);
 Route::resource('detalles_pedido', DetallePedidoController::class);
-use App\Http\Controllers\HomeController;
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-

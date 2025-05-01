@@ -104,9 +104,9 @@
                         <div class="mt-auto">
                             <p class="fw-bold text-brown h5">${{ number_format($producto->precio, 2) }}</p>
 
-                            <a href="#" class="btn btn-success btn-sm w-100 mt-2">
-                                Ver más
-                            </a>
+                            <a href="{{ route('compra', $producto->id_producto) }}" class="btn btn-success">Ver más</a>
+
+
                         </div>
                     </div>
                 </div>

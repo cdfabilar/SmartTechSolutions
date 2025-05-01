@@ -22,7 +22,7 @@ class PedidoController extends Controller
 
     public function store(Request $request)
     {
-        // Validar los campos del formulario
+
         $request->validate([
             'nombre' => 'required|string|max:100',
             'descripcion' => 'nullable|string',
@@ -31,10 +31,10 @@ class PedidoController extends Controller
             'imagen' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',  // Validación de imagen
         ]);
 
-        // Subir la imagen al disco 'public' y obtener la ruta de almacenamiento
+
         $imagenPath = $request->file('imagen')->store('productos', 'public');
 
-        // Crear el nuevo producto y guardar en la base de datos
+
         Producto::create([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,

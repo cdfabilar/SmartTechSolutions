@@ -31,6 +31,7 @@ Auth::routes();
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/catalogo/pedido/{id}', [HomeController::class, 'pedido'])->name('compra');
 
 // Ruta solo accesible por el admin

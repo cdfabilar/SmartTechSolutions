@@ -9,37 +9,39 @@
         @method('PUT')
 
         <div class="mb-3">
-            <label class="form-label">Pedido:</label>
-            <select name="id_pedido" class="form-control">
-                <option value="">-- Seleccionar --</option>
-                @foreach($pedidos as $pedido)
-                <option value="{{ $pedido->id_pedido }}" {{ $pedido->id_pedido == $entrega->id_pedido ? 'selected' : '' }}>
-                    {{ $pedido->id_pedido }}
+            <label for="id_venta" class="form-label">Venta:</label>
+            <select class="form-control" name="id_venta" required>
+                <option value="">Seleccionar Venta</option>
+                @foreach($ventas as $venta)
+                <option value="{{ $venta->id_venta }}" {{ $venta->id_venta == $entrega->id_venta ? 'selected' : '' }}>
+                    {{ $venta->id_venta }}
                 </option>
                 @endforeach
             </select>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Fecha Estimada:</label>
-            <input type="date" class="form-control" name="fecha_entrega_estimada" value="{{ $entrega->fecha_entrega_estimada }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Fecha Real:</label>
-            <input type="date" class="form-control" name="fecha_entrega_real" value="{{ $entrega->fecha_entrega_real }}">
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Estado:</label>
-            <select name="estado" class="form-control" required>
-                @foreach(['Pendiente', 'En Ruta', 'Entregado'] as $estado)
-                <option value="{{ $estado }}" {{ $estado == $entrega->estado ? 'selected' : '' }}>{{ $estado }}</option>
+            <label for="id_repartidor" class="form-label">Repartidor:</label>
+            <select class="form-control" name="id_repartidor" required>
+                <option value="">Seleccionar Repartidor</option>
+                @foreach($repartidores as $repartidor)
+                <option value="{{ $repartidor->id_repartidor }}" {{ $repartidor->id_repartidor == $entrega->id_repartidor ? 'selected' : '' }}>
+                    {{ $repartidor->usuario->name }}
+                </option>
                 @endforeach
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado:</label>
+            <select class="form-control" name="estado" required>
+                <option value="pendiente" {{ $entrega->estado == 'pendiente' ? 'selected' : '' }}>Pendiente</option>
+                <option value="en curso" {{ $entrega->estado == 'en curso' ? 'selected' : '' }}>En Curso</option>
+                <option value="entregado" {{ $entrega->estado == 'entregado' ? 'selected' : '' }}>Entregado</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Actualizar Entrega</button>
         <a href="{{ route('entregas.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>

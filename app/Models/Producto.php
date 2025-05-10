@@ -19,7 +19,6 @@ class Producto extends Model
         'precio',
         'stock',
         'imagen',
-        'fecha_agregado',
     ];
 
     public function setImagenAttribute($value)

@@ -19,7 +19,6 @@
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Imagen</th>
-                <th>Fecha Agregado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -32,7 +31,6 @@
                 <td>${{ $producto->precio }}</td>
                 <td>{{ $producto->stock }}</td>
                 <td><img src="{{ asset('storage/' . $producto->imagen) }}" alt="Imagen del producto" width="100" height="100"></td>
-                <td>{{ $producto->fecha_agregado }}</td>
                 <td>
                     <a href="{{ route('productos.edit', $producto->id_producto) }}" class="btn btn-warning btn-sm">Editar</a>
                     <form action="{{ route('productos.destroy', $producto->id_producto) }}" method="POST" style="display:inline-block;">

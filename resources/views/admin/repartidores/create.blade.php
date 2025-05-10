@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <h2>Registrar Nuevo Cliente</h2>
+    <h2>Registrar Nuevo Repartidor</h2>
 
-    <form action="{{ route('clientes.store') }}" method="POST">
+    <form action="{{ route('repartidor.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
@@ -27,8 +27,18 @@
             <textarea class="form-control" name="direccion" required>{{ old('direccion') }}</textarea>
         </div>
 
+        <div class="mb-3">
+            <label for="fecha_ingreso" class="form-label">Fecha de Ingreso:</label>
+            <input type="date" class="form-control" name="fecha_ingreso" value="{{ old('fecha_ingreso') }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="entregas_totales" class="form-label">Entregas Totales:</label>
+            <input type="number" class="form-control" name="entregas_totales" value="{{ old('entregas_totales') }}" required>
+        </div>
+
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{ route('clientes.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('repartidor.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection

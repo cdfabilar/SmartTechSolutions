@@ -1,63 +1,103 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Entrega;
-use App\Models\Pedido;
+use App\Models\Venta;
+use App\Models\Repartidor;
 use Illuminate\Http\Request;
 
 class EntregaController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $entregas = Entrega::with('pedido')->get();
+        //
+        $entregas = Entrega::with(['venta', 'repartidor'])->get();
         return view('admin.entregas.index', compact('entregas'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
-        $pedidos = Pedido::all();
-        return view('admin.entregas.create', compact('pedidos'));
+        //
+        $ventas = Venta::all();
+        $repartidores = Repartidor::all();
+        return view('admin.entregas.create', compact('ventas', 'repartidores'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
+        //
         $request->validate([
-            'id_pedido' => 'nullable|exists:pedidos,id_pedido',
-            'fecha_entrega_estimada' => 'required|date',
-            'fecha_entrega_real' => 'nullable|date',
-            'estado' => 'required|in:Pendiente,En Ruta,Entregado',
+            'id_venta' => 'required|exists:ventas,id_venta',
+            'estado' => 'required|in:pendiente,en curso,entregado',
+            'id_repartidor' => 'required|exists:repartidores,id_repartidor',
         ]);
 
-        Entrega::create($request->all());
-
-        return redirect()->route('entregas.index')->with('success', 'Entrega registrada correctamente.');
-    }
-
-    public function edit($id)
-    {
-        $entrega = Entrega::findOrFail($id);
-        $pedidos = Pedido::all();
-        return view('admin.entregas.edit', compact('entrega', 'pedidos'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'id_pedido' => 'nullable|exists:pedidos,id_pedido',
-            'fecha_entrega_estimada' => 'required|date',
-            'fecha_entrega_real' => 'nullable|date',
-            'estado' => 'required|in:Pendiente,En Ruta,Entregado',
+        Entrega::create([
+            'id_venta' => $request->id_venta,
+            'estado' => $request->estado,
+            'id_repartidor' => $request->id_repartidor,
         ]);
 
-        $entrega = Entrega::findOrFail($id);
-        $entrega->update($request->all());
-
-        return redirect()->route('entregas.index')->with('success', 'Entrega actualizada correctamente.');
+        return redirect()->route('entregas.index')->with('success', 'Entrega registrada correctamente');
     }
 
-    public function destroy($id)
+    /**
+     * Display the specified resource.
+     */
+    public function show(Entrega $entrega)
     {
-        Entrega::findOrFail($id)->delete();
-        return redirect()->route('entregas.index')->with('success', 'Entrega eliminada correctamente.');
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Entrega $entrega)
+    {
+        //
+        $ventas = Venta::all();
+        $repartidores = Repartidor::all();
+        return view('admin.entregas.edit', compact('entrega', 'ventas', 'repartidores'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Entrega $entrega)
+    {
+        //
+        $request->validate([
+            'id_venta' => 'required|exists:ventas,id_venta',
+            'estado' => 'required|in:pendiente,en curso,entregado',
+            'id_repartidor' => 'required|exists:repartidores,id_repartidor',
+        ]);
+
+        $entrega->update([
+            'id_venta' => $request->id_venta,
+            'estado' => $request->estado,
+            'id_repartidor' => $request->id_repartidor,
+        ]);
+
+        return redirect()->route('entregas.index')->with('success', 'Entrega actualizada correctamente');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Entrega $entrega)
+    {
+        //
+        $entrega->delete();
+        return redirect()->route('entregas.index')->with('success', 'Entrega eliminada correctamente');
     }
 }

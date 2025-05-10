@@ -2,63 +2,91 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Illuminate\Http\Request;
+use App\Models\User;
 
 class ClienteController extends Controller
 {
-    
-public function index()
-{
-    $clientes = Cliente::all();
-    return view('admin.clientes.index', compact('clientes'));
-}
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $clientes = Cliente::with('usuario')->get();
+        return view('admin.clientes.index', compact('clientes'));
+    }
 
-public function edit($id)
-{
-    $cliente = Cliente::findOrFail($id);
-    return view('admin.clientes.edit', compact('cliente'));
-}
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $usuarios = User::all();
+        return view('admin.clientes.create', compact('usuarios'));
+    }
 
-public function update(Request $request, $id)
-{
-    $request->validate([
-        'nombre' => 'required|string|max:100',
-        'email' => 'required|email|max:100|unique:clientes,email,' . $id . ',id_cliente',
-        'telefono' => 'nullable|string|max:20',
-        'direccion' => 'required|string',
-    ]);
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'id_usuario' => 'required|exists:users,id',
+            'direccion' => 'required|string|max:255',
+            'telefono' => 'required|string|max:20',
+        ]);
 
-    $cliente = Cliente::findOrFail($id);
-    $cliente->update($request->all());
+        Cliente::create([
+            'id_usuario' => $request->id_usuario,
+            'direccion' => $request->direccion,
+            'telefono' => $request->telefono,
+        ]);
 
-    return redirect()->route('clientes.index')->with('success', 'Cliente actualizado correctamente');
-}
+        return redirect()->route('clientes.index')->with('success', 'Cliente creado correctamente');
+    }
 
-public function destroy($id)
-{
-    Cliente::findOrFail($id)->delete();
-    return redirect()->route('clientes.index')->with('success', 'Cliente eliminado correctamente');
-}
+    /**
+     * Display the specified resource.
+     */
+    public function show(Cliente $cliente) {}
 
-public function create()
-{
-    return view('admin.clientes.create');
-}
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Cliente $cliente)
+    {
+        $usuarios = User::all();
+        return view('admin.clientes.edit', compact('cliente', 'usuarios'));
+    }
 
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Cliente $cliente)
+    {
+        $request->validate([
+            'id_usuario' => 'required|exists:users,id',
+            'direccion' => 'required|string|max:255',
+            'telefono' => 'required|string|max:20',
+        ]);
 
-public function store(Request $request)
-{
-    $request->validate([
-        'nombre' => 'required|string|max:100',
-        'email' => 'required|email|max:100|unique:clientes,email',
-        'telefono' => 'nullable|string|max:20',
-        'direccion' => 'required|string',
-    ]);
+        $cliente->update([
+            'id_usuario' => $request->id_usuario,
+            'direccion' => $request->direccion,
+            'telefono' => $request->telefono,
+        ]);
 
-    Cliente::create($request->all());
+        return redirect()->route('clientes.index')->with('success', 'Cliente actualizado correctamente');
+    }
 
-    return redirect()->route('clientes.index')->with('success', 'Cliente creado correctamente.');
-}
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Cliente $cliente)
+    {
+        $cliente->delete();
 
+        return redirect()->route('clientes.index')->with('success', 'Cliente eliminado correctamente');
+    }
 }

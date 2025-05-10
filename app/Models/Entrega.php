@@ -9,18 +9,31 @@ class Entrega extends Model
 {
     use HasFactory;
 
+    protected $table = 'entregas';
+
     protected $primaryKey = 'id_entrega';
+
     public $timestamps = false;
 
     protected $fillable = [
-        'id_pedido',
-        'fecha_entrega_estimada',
-        'fecha_entrega_real',
+        'id_venta',
         'estado',
+        'id_repartidor',
     ];
 
-    public function pedido()
+    /**
+     *
+     */
+    public function venta()
     {
-        return $this->belongsTo(Pedido::class, 'id_pedido', 'id_pedido');
+        return $this->belongsTo(Venta::class, 'id_venta');
+    }
+
+    /**
+     *
+     */
+    public function repartidor()
+    {
+        return $this->belongsTo(Repartidor::class, 'id_repartidor');
     }
 }

@@ -9,18 +9,21 @@
         @method('PUT')
 
         <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" name="nombre" value="{{ $cliente->nombre }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" name="email" value="{{ $cliente->email }}" required>
+            <label for="id_usuario" class="form-label">Seleccionar Usuario:</label>
+            <select class="form-control" name="id_usuario" required>
+                <option value="">Seleccionar usuario</option>
+                @foreach($usuarios as $usuario)
+                <option value="{{ $usuario->id }}"
+                    {{ $usuario->id == $cliente->id_usuario ? 'selected' : '' }}>
+                    {{ $usuario->name }} ({{ $usuario->email }})
+                </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono:</label>
-            <input type="text" class="form-control" name="telefono" value="{{ $cliente->telefono }}">
+            <input type="text" class="form-control" name="telefono" value="{{ $cliente->telefono }}" required>
         </div>
 
         <div class="mb-3">

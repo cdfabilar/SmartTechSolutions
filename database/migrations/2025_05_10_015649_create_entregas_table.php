@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('entregas', function (Blueprint $table) {
             $table->id('id_entrega');
-            $table->unsignedBigInteger('id_pedido')->nullable();
-            $table->date('fecha_entrega_estimada');
-            $table->date('fecha_entrega_real')->nullable();
-            $table->enum('estado', ['Pendiente', 'En Ruta', 'Entregado'])->default('Pendiente');
-    
-            // Clave foránea
-            $table->foreign('id_pedido')->references('id_pedido')->on('pedidos')->onDelete('set null');
+            $table->unsignedBigInteger('id_venta');
+            $table->enum('estado', ['pendiente', 'en curso', 'entregado']);
+            $table->unsignedBigInteger('id_repartidor');
+            $table->timestamps(false);
+
+
+            $table->foreign('id_venta')->references('id_venta')->on('ventas')->onDelete('cascade');
+            $table->foreign('id_repartidor')->references('id_repartidor')->on('repartidores')->onDelete('cascade');
         });
     }
 

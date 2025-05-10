@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $productos = Producto::all(); // o ->paginate(12) si quieres paginar
+        $productos = Producto::all();
         return view('home', compact('productos'));
     }
 

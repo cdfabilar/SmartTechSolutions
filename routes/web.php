@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\PedidoController;
-use App\Http\Controllers\PagoController;
-use App\Http\Controllers\EntregaController;
-use App\Http\Controllers\DetallePedidoController;
+use App\Http\Controllers\RepartidorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VentaController;
+use App\Http\Controllers\EntregaController;
+
 
 //Rutas Publicas para cualquier usuario
 
@@ -46,7 +46,6 @@ Route::get('/dashboard', function () {
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('productos', ProductoController::class);
-Route::resource('pedidos', PedidoController::class);
-Route::resource('pagos', PagoController::class);
+Route::resource('repartidor', RepartidorController::class);
+Route::resource('ventas', VentaController::class);
 Route::resource('entregas', EntregaController::class);
-Route::resource('detalles_pedido', DetallePedidoController::class);

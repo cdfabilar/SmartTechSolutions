@@ -3,20 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Cliente extends Model
+class Repartidor extends Model
 {
-    use HasFactory;
+    //
+    protected $table = 'repartidores';
 
-    protected $primaryKey = 'id_cliente';
-
+    protected $primaryKey = 'id_repartidor';
     public $timestamps = false;
+
+    protected $dates = ['fecha_ingreso'];
 
     protected $fillable = [
         'id_usuario',
-        'direccion',
         'telefono',
+        'direccion',
+        'fecha_ingreso',
+        'entregas_totales',
     ];
 
     public function usuario()

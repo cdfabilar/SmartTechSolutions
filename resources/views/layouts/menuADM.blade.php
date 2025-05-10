@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Panel de Administración</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
 
     <div class="d-flex flex-column w-100">
@@ -24,7 +26,7 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Salir
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -48,12 +50,13 @@
                 </div>
                 <hr class="border-light">
                 <div class="nav flex-column">
-                    <a href="{{ route('clientes.index') }}" class="nav-link text-white">Clientes</a>
-                    <a href="{{ route('pedidos.index') }}" class="nav-link text-white">Pedidos</a>
+
                     <a href="{{ route('productos.index') }}" class="nav-link text-white">Productos</a>
+                    <a href="{{ route('clientes.index') }}" class="nav-link text-white">Clientes</a>
+                    <a href="{{ route('repartidor.index') }}" class="nav-link text-white">Repartidores</a>
+                    <a href="{{ route('ventas.index') }}" class="nav-link text-white">Ventas</a>
                     <a href="{{ route('entregas.index') }}" class="nav-link text-white">Entregas</a>
-                    <a href="{{ route('pagos.index') }}" class="nav-link text-white">Pagos</a>
-                    <a href="{{ route('detalles_pedido.index') }}" class="nav-link text-white">Detalles de Pedido</a>
+
                 </div>
                 <hr class="border-light">
             </div>
@@ -69,4 +72,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

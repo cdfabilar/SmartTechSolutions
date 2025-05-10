@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Crear la tabla 'users'
+
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -26,14 +26,12 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Crear la tabla 'password_reset_tokens'
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
 
-        // Crear la tabla 'sessions'
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -43,22 +41,22 @@ return new class extends Migration
             $table->integer('last_activity')->index();
         });
 
-        // Insertar el usuario administrador si no existe
+
         $adminUser = DB::table('users')->where('email', 'admin@example.com')->first();
 
         if (!$adminUser) {
-            // Crear el usuario administrador solo si no existe
+
             DB::table('users')->insert([
                 'name' => 'Admin',
                 'email' => 'admin@example.com',
-                'password' => Hash::make('admin123'), // Encriptar la contraseña
-                'role' => 'admin', // Asignar el rol 'admin'
-                'email_verified_at' => now(), // Marcar como verificado
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',
+                'email_verified_at' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
         } else {
-            // Si el usuario ya existe, actualizar su rol a 'admin'
+
             DB::table('users')->where('email', 'admin@example.com')->update(['role' => 'admin']);
         }
     }
@@ -68,7 +66,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Eliminar las tablas en el reverso de la migración
+
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');

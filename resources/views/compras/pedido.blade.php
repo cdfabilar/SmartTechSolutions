@@ -99,53 +99,70 @@
                 <div class="col-md-6">
                     <div class="card shadow-sm h-100 p-4">
                         <h4 class="mb-4">Formulario de Compra</h4>
-                        <form method="POST" action="#">
+                        <form href="#">
                             @csrf
 
                             <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre completo</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required value="{{ Auth::user()->name }}">
+                                <label for="id_cliente" class="form-label">Cliente:</label>
+                                <input type="hidden" name="id_cliente" value="{{ auth()->user()->id }}">
+                                <input type="text" class="form-control" value="{{ auth()->user()->name }}" readonly>
                             </div>
 
                             <div class="mb-3">
-                                <label for="telefono" class="form-label">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                <input type="hidden" name="id_producto" value="{{ $producto->id_producto }}">
+                                <input type="text" class="form-control" value="{{ $producto->nombre }}" readonly>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad:</label>
+                                <input type="number" class="form-control" name="cantidad" id="cantidad" value="{{ old('cantidad') }}" min="1" required function="updateTotal()">
                             </div>
 
                             <div class="mb-3">
-                                <label for="correo" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="correo" name="correo" required value="{{ Auth::user()->email }}">
+                                <label for="total" class="form-label">Total:</label>
+                                <input type="text" class="form-control" name="total" id="total" value="{{ old('total') }}" required>
                             </div>
 
                             <div class="mb-3">
-                                <label for="direccion" class="form-label">Dirección</label>
-                                <input type="text" class="form-control" id="direccion" name="direccion" required>
+                                <label for="tarjeta_credito" class="form-label">Tarjeta de Crédito:</label>
+                                <input type="text" class="form-control" name="tarjeta_credito" value="{{ old('tarjeta_credito') }}" required>
                             </div>
 
                             <div class="mb-3">
-                                <label for="tarjeta" class="form-label">Tarjeta de crédito</label>
-                                <input type="text" class="form-control" id="tarjeta" name="tarjeta" maxlength="16" pattern="\d{16}" title="Debe tener 16 dígitos" required>
+                                <label for="cvv" class="form-label">CVV:</label>
+                                <input type="text" class="form-control" name="cvv" value="{{ old('cvv') }}" required>
                             </div>
 
-                            <div class="row">
-                                <div class="col-6 mb-3">
-                                    <label for="cvv" class="form-label">CVV</label>
-                                    <input type="text" class="form-control" id="cvv" name="cvv" maxlength="4" pattern="\d{3,4}" title="3 o 4 dígitos" required>
-                                </div>
-
-                                <div class="col-6 mb-3">
-                                    <label for="fecha_vencimiento" class="form-label">Fecha de vencimiento</label>
-                                    <input type="month" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" required>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="cantidad" class="form-label">Cantidad</label>
-                                <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" value="1" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-success w-100 mt-3">Comprar</button>
+                            <button type="submit" class="btn btn-success">Realizar Compra</button>
+                            <a href="{{ route('home') }}" class="btn btn-secondary">Cancelar</a>
                         </form>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const cantidadInput = document.getElementById('cantidad');
+                                const productoSelect = document.getElementById('producto');
+                                const totalInput = document.getElementById('total');
+
+                                productoSelect.addEventListener('change', function() {
+                                    updateTotal();
+                                });
+
+                                cantidadInput.addEventListener('input', function() {
+                                    updateTotal();
+                                });
+
+                                function updateTotal() {
+                                    const precio = productoSelect.options[productoSelect.selectedIndex].getAttribute('data-precio');
+                                    const cantidad = cantidadInput.value;
+
+                                    if (precio && cantidad) {
+                                        totalInput.value = (precio * cantidad).toFixed(2);
+                                    } else {
+                                        totalInput.value = '0.00';
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
 

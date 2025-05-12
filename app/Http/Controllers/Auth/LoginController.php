@@ -46,6 +46,10 @@ class LoginController extends Controller
             return redirect()->route('admin.dashboard');  // Redirige al dashboard del admin
         }
 
+        if ($user->role == 'rep') {
+            return redirect()->route('repartidores.welcomerep');  // Redirige al dashboard del admin
+        }
+
         // Si el usuario no es administrador, lo redirige a su home o a donde prefieras
         return redirect()->route('home');
     }

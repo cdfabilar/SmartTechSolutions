@@ -169,7 +169,7 @@
                 <!-- Miembro del equipo 1: Carlos Daniel Fabila Reyes -->
                 <div class="col-md-4">
                     <div class="card team-member">
-                        <img src="IMG/CARLOS.jpeg" class="card-img-top" alt="">
+                        <img src="IMG/CARLOS.jpg" class="card-img-top" alt="">
                         <div class="card-body">
                             <h4 class="card-title">Carlos Daniel Fabila Reyes</h4>
                             <p class="card-text">CEO</p>

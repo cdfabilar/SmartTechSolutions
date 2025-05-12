@@ -32,20 +32,26 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/catalogo/pedido/{id}', [HomeController::class, 'pedido'])->name('compra');
 
 // Ruta solo accesible por el admin
 Route::get('/dashboard', function () {
     if (Auth::check() && Auth::user()->role == 'admin') {
-        return view('admin.dashboard'); // Ruta del administrador
+        return view('admin.dashboard');
     }
 
-    // Redirigir si no es administrador o no está autenticado
     return redirect('/')->with('error', 'No tienes acceso a esta página.');
 })->name('admin.dashboard');
+
+
+
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('productos', ProductoController::class);
 Route::resource('repartidor', RepartidorController::class);
 Route::resource('ventas', VentaController::class);
 Route::resource('entregas', EntregaController::class);
+
+
+Route::get('/catalogo/pedido/{id}', [VentaController::class, 'realizarCompra'])->name('compra');
+
+Route::post('/procesar-venta', [VentaController::class, 'procesarVenta'])->name('venta.procesar');

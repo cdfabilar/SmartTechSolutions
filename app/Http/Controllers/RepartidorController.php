@@ -50,7 +50,11 @@ class RepartidorController extends Controller
             'entregas_totales' => $request->entregas_totales,
         ]);
 
-        return redirect()->route('repartidor.index')->with('success', 'Proveedor creado correctamente');
+        $usuario = User::findOrFail($request->id_usuario);
+        $usuario->role = 'rep'; // Asignamos el rol de repartidor
+        $usuario->save();
+
+        return redirect()->route('repartidor.index')->with('success', 'Repartidor creado correctamente');
     }
 
     /**
@@ -101,7 +105,9 @@ class RepartidorController extends Controller
      */
     public function destroy(Repartidor $repartidor)
     {
-        //
+        $usuario = User::findOrFail($repartidor->id_usuario);
+        $usuario->role = 'user'; // Asignamos el rol de repartidor
+        $usuario->save();
         $repartidor->delete();
         return redirect()->route('repartidor.index')->with('success', 'Repartidor eliminado correctamente');
     }

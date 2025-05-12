@@ -7,6 +7,8 @@ use App\Models\Venta;
 use App\Models\Repartidor;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class EntregaController extends Controller
 {
     /**
@@ -16,7 +18,12 @@ class EntregaController extends Controller
     {
         //
         $entregas = Entrega::with(['venta', 'repartidor'])->get();
-        return view('admin.entregas.index', compact('entregas'));
+
+        if (Auth::check() && Auth::user()->role == 'admin') {
+            return view('admin.entregas.index', compact('entregas'));
+        }
+
+        return redirect('/')->with('error', 'No tienes acceso a esta página.');
     }
 
     /**

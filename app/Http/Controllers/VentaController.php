@@ -118,4 +118,37 @@ class VentaController extends Controller
         $venta->delete();
         return redirect()->route('ventas.index')->with('success', 'Venta eliminada correctamente.');
     }
+
+
+    public function realizarCompra($id)
+    {
+        $producto = Producto::findOrFail($id);
+        $productos = \App\Models\Producto::where('id_producto', '!=', $id)->get();
+        return view('compras.pedido', compact('producto', 'productos'));
+    }
+
+    public function procesarVenta(Request $request)
+    {
+        $request->validate([
+            'id_cliente' => 'required|exists:users,id',
+            'id_producto' => 'required|exists:productos,id_producto',
+            'cantidad' => 'required|integer|min:1',
+            'total' => 'required|numeric',
+            'tarjeta_credito' => 'required|string',
+            'cvv' => 'required|string',
+        ]);
+
+        Venta::create([
+            'id_cliente' => $request->id_cliente,
+            'id_producto' => $request->id_producto,
+            'cantidad' => $request->cantidad,
+            'total' => $request->total,
+            'tarjeta_credito' => $request->tarjeta_credito,
+            'cvv' => $request->cvv,
+            'fecha_venta' => now(),
+            'hora_venta' => now()->format('H:i:s'),
+        ]);
+
+        return redirect()->route('home')->with('success', 'Compra realizada correctamente');
+    }
 }

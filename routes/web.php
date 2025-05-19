@@ -39,10 +39,13 @@ Route::get('/dashboard', function () {
         return view('admin.dashboard');
     }
 
+
     return redirect('/')->with('error', 'No tienes acceso a esta página.');
 })->name('admin.dashboard');
 
-
+Route::get('/welcomerep', function () {
+    return view('repartidores.welcomerep');
+})->name('repartidores.welcomerep');
 
 
 Route::resource('clientes', ClienteController::class);

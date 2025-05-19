@@ -45,7 +45,7 @@
     }
 </style>
 
-<!-- Hero Principal -->
+
 <section class="hero">
     <div class="container">
         <h1>Generadores de Energía Limpia </h1>
@@ -54,7 +54,7 @@
     </div>
 </section>
 
-<!-- Beneficios / Mensaje institucional -->
+
 <section class="py-5">
     <div class="container">
         <div class="row text-center">
@@ -80,7 +80,7 @@
     </div>
 </section>
 
-<!-- Tabla de Productos -->
+
 <section id="productos" class="py-5">
     <div class="container">
         <h2 class="text-center fw-bold mb-5">Nuestros Generadores</h2>
@@ -104,7 +104,7 @@
                         <div class="mt-auto">
                             <p class="fw-bold text-brown h5">${{ number_format($producto->precio, 2) }}</p>
 
-                            <a href="{{ route('compra', $producto->id_producto) }}" class="btn btn-success">Ver más</a>
+                            <a href="{{ route('productos.show' , $producto) }}" class="btn btn-success">Ver más</a>
 
 
                         </div>
@@ -117,7 +117,7 @@
     </div>
 </section>
 
-<!-- Llamado a la acción -->
+
 <section class="py-5 bg-success text-white text-center">
     <div class="container">
         <h2 class="fw-bold">¡Haz el cambio hacia la energía limpia!</h2>

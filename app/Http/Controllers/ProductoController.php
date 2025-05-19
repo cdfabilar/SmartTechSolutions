@@ -57,7 +57,7 @@ class ProductoController extends Controller
         ]);
 
 
-        return redirect()->route('productos.index')->with('success', $imagenPath);
+        return redirect()->route('productos.index')->with('success', 'Producto registrado correctamente');
     }
 
     /**
@@ -66,6 +66,8 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+        $productos = Producto::all();
+        return view('compras.pedido', compact('producto', 'productos'));
     }
 
     /**

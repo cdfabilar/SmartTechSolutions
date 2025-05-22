@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>Venta</th>
                 <th>Repartidor</th>
+                <th>Teléfono Cliente</th>
                 <th>Estado</th>
                 <th>Acciones</th>
             </tr>
@@ -24,6 +25,7 @@
                 <td>{{ $entrega->id_entrega }}</td>
                 <td>{{ $entrega->venta->id_venta }}</td>
                 <td>{{ $entrega->repartidor->usuario->name }}</td>
+                <td>{{ optional($entrega->venta->cliente)->telefono ?? 'Sin teléfono' }}</td>
                 <td>
                     @php
                     $estado = strtolower($entrega->estado);

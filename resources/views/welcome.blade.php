@@ -115,7 +115,6 @@
 <body>
 
 
-    <!-- Sección principal (Hero) -->
     <header class="hero text-center">
         <div class="container">
             <h1 class="display-4"><img src="{{ asset('IMG/LogoSTS.png') }}" class="w-25"></h1>
@@ -142,7 +141,6 @@
         </div>
     </header>
 
-    <!-- Sección de características -->
     <section class="features text-center">
         <div class="container">
             <h2 class="mb-5">Nuestras Soluciones</h2>
@@ -175,7 +173,6 @@
         </div>
     </section>
 
-    <!-- Pie de página -->
     <footer>
         <div class="container text-center h-100vh">
             <p>&copy; 2025 SmartTechSolutions. Todos los derechos reservados.</p>

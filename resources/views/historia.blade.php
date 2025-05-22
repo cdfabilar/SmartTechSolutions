@@ -112,7 +112,6 @@
 <body>
 
 
-    <!-- Sección principal (Hero) -->
     <header class="hero text-center">
         <div class="container">
             <h1 class="display-4">Nuestra Historia</h1>
@@ -120,7 +119,6 @@
         </div>
     </header>
 
-    <!-- Sección de la historia -->
     <section class="history-section">
         <div class="container">
             <h2>El Viaje de SmartTechSolutions</h2>
@@ -153,7 +151,6 @@
         </div>
     </section>
 
-    <!-- Pie de página -->
     <footer>
         <div class="container text-center">
             <p>&copy; 2025 SmartTechSolutions. Todos los derechos reservados.</p>

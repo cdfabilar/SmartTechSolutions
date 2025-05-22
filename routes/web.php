@@ -55,6 +55,7 @@ Route::get('/welcomerep', function () {
 })->name('repartidores.welcomerep');
 
 
+
 Route::resource('clientes', ClienteController::class);
 Route::resource('productos', ProductoController::class);
 Route::resource('repartidor', RepartidorController::class);

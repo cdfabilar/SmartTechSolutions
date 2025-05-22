@@ -153,7 +153,6 @@
 <body>
 
 
-    <!-- Sección principal (Hero) -->
     <header class="hero text-center">
         <div class="container">
             <h1 class="display-4">Conoce a Nuestro Equipo</h1>
@@ -161,12 +160,10 @@
         </div>
     </header>
 
-    <!-- Sección del equipo -->
     <section class="team-section text-center">
         <div class="container h-auto">
             <h2>Estructura organizacional jerárquica</h2>
             <div class="row">
-                <!-- Miembro del equipo 1: Carlos Daniel Fabila Reyes -->
                 <div class="col-md-4">
                     <div class="card team-member">
                         <img src="IMG/CARLOS.jpg" class="card-img-top" alt="">
@@ -176,7 +173,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Miembro del equipo 2: Diego Rebollar Cacique -->
                 <div class="col-md-4">
                     <div class="card team-member">
                         <img src="IMG/DIEGO.jpeg" class="card-img-top" alt="Diego Rebollar Cacique">
@@ -186,7 +182,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Miembro del equipo 3: Alberto Jordán Samanó -->
                 <div class="col-md-4">
                     <div class="card team-member">
                         <img src="IMG/JORDAN.jpeg" class="card-img-top" alt="Alberto Jordán Samanó">
@@ -200,7 +195,6 @@
         </div>
     </section>
 
-    <!-- Pie de página -->
     <footer>
         <div class="container text-center">
             <p>&copy; 2025 SmartTechSolutions. Todos los derechos reservados.</p>

@@ -21,4 +21,9 @@ class HomeController extends Controller
         $productos = \App\Models\Producto::where('id_producto', '!=', $id)->get();
         return view('compras.pedido', compact('producto', 'productos'));
     }
+
+    public function back()
+    {
+        return view('welcome');
+    }
 }

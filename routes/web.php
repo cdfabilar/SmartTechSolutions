@@ -24,6 +24,10 @@ Route::get('/historia', function () {
     return view('historia');
 })->name('historia');
 
+Route::get('/gracias', function () {
+    return view('compras/gracias');
+})->name('gracias');
+
 
 
 Auth::routes();
@@ -44,7 +48,10 @@ Route::get('/dashboard', function () {
 })->name('admin.dashboard');
 
 Route::get('/welcomerep', function () {
-    return view('repartidores.welcomerep');
+    if (Auth::check() && Auth::user()->role == 'rep') {
+        return view('repartidores.welcomerep');
+    }
+    return redirect('/')->with('error', 'No tienes acceso a esta página.');
 })->name('repartidores.welcomerep');
 
 
@@ -53,6 +60,8 @@ Route::resource('productos', ProductoController::class);
 Route::resource('repartidor', RepartidorController::class);
 Route::resource('ventas', VentaController::class);
 Route::resource('entregas', EntregaController::class);
+
+
 
 
 Route::get('/catalogo/pedido/{id}', [VentaController::class, 'realizarCompra'])->name('compra');

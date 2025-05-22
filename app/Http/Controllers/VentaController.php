@@ -149,6 +149,6 @@ class VentaController extends Controller
             'hora_venta' => now()->format('H:i:s'),
         ]);
 
-        return redirect()->route('home')->with('success', 'Compra realizada correctamente');
+        return redirect()->route('gracias')->with('success', 'Compra realizada correctamente');
     }
 }

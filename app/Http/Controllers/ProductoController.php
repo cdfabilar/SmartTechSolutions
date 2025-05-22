@@ -6,6 +6,8 @@ use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -67,7 +69,8 @@ class ProductoController extends Controller
     {
         //
         $productos = Producto::all();
-        return view('compras.pedido', compact('producto', 'productos'));
+        $cliente = \App\Models\Cliente::where('id_usuario', auth()->id())->first();
+        return view('compras.pedido', compact('producto', 'productos', 'cliente'));
     }
 
     /**

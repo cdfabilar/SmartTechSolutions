@@ -24,7 +24,6 @@ class Venta extends Model
         'cvv',
         'fecha_venta',
         'hora_venta',
-        'entregas_totales',
     ];
 
     public function cliente()

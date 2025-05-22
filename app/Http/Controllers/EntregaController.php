@@ -23,6 +23,10 @@ class EntregaController extends Controller
             return view('admin.entregas.index', compact('entregas'));
         }
 
+        if (Auth::check() && Auth::user()->role == 'rep') {
+            return view('repartidores.index', compact('entregas'));
+        }
+
         return redirect('/')->with('error', 'No tienes acceso a esta página.');
     }
 

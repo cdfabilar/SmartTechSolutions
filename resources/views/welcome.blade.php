@@ -122,9 +122,21 @@
             <p class="lead">Soluciones innovadoras en energía limpia y cuidado del medio ambiente</p>
             @if (Route::has('login'))
             @auth
+            @php
+            $role = auth()->user()->role;
+            @endphp
+
+            @if ($role === 'admin')
+            <a href="{{ route('admin.dashboard') }}" class="btn btn-primary btn-lg">Entrar</a>
+            @elseif ($role === 'rep')
+            <a href="{{ route('repartidores.welcomerep') }}" class="btn btn-primary btn-lg">Entrar</a>
+            @elseif ($role === 'user')
             <a href="{{ route('home') }}" class="btn btn-primary btn-lg">Entrar</a>
             @else
-            <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Iniciar Sesion</a>
+            <a href="{{ route('home') }}" class="btn btn-primary btn-lg">Entrar</a>
+            @endif
+            @else
+            <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Iniciar Sesión</a>
             @endauth
             @endif
         </div>

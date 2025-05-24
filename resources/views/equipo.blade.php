@@ -184,7 +184,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card team-member">
-                        <img src="IMG/JORDAN.jpeg" class="card-img-top" alt="Alberto Jordán Samanó">
+                        <img src="IMG/ALBERTOJ.PNG" class="card-img-top" alt="Alberto Jordán Samanó">
                         <div class="card-body">
                             <h4 class="card-title">Alberto Jordán Samanó</h4>
                             <p class="card-text">Director de Tecnología</p>

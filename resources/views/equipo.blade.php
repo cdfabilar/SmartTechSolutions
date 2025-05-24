@@ -124,7 +124,7 @@
         .card {
             border: none;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(161, 211, 151, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -147,6 +147,14 @@
             font-size: 1rem;
             color: var(--color-negro);
         }
+        .card {
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(108, 243, 130, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
     </style>
 </head>
 

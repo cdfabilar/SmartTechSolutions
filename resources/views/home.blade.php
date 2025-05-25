@@ -19,7 +19,10 @@
         font-weight: bold;
         font-size: 2.8rem;
     }
-
+    .grosor {
+        text-shadow: 1px 1px 0 #000;
+        letter-spacing: 0.5px;
+    }
     .hero p {
         font-size: 1.2rem;
         opacity: 0.95;
@@ -42,6 +45,10 @@
     #tabla-productos th {
         background-color: #28a745;
         color: white;
+    }
+    .titulo-negro {
+        font-weight: 700;
+        color: #000;
     }
 </style>
 
@@ -83,7 +90,7 @@
 
 <section id="productos" class="py-5">
     <div class="container">
-        <h2 class="text-center fw-bold mb-5">Nuestros Generadores</h2>
+    <h2 class="text-center titulo-negro">Nuestras Soluciones</h2>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             @foreach($productos as $producto)

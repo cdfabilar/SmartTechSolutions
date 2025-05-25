@@ -108,6 +108,10 @@
             background-color: var(--color-cafe);
             border-color: var(--color-cafe);
         }
+        .titulo-negro {
+        font-weight: 700;
+        color: #000;
+    }
     </style>
 
 </head>
@@ -143,7 +147,8 @@
 
     <section class="features text-center">
         <div class="container">
-            <h2 class="mb-5">Nuestras Soluciones</h2>
+            <h2 class="titulo-negro mb-5">Nuestras Soluciones</h2>
+
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card">

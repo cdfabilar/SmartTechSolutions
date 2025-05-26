@@ -1,0 +1,192 @@
+[33mcommit b68d78b1b02de404e6449b68aaf886308e4491d8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Albertp <L202307048@vbravo.tecnm.mx>
+Date:   Sun May 25 21:39:49 2025 -0600
+
+    cambios en home
+
+[33mcommit 523b74c7b466cb228ff8f009106f8c171aea03dd[m
+Author: Albertp <L202307048@vbravo.tecnm.mx>
+Date:   Sun May 25 21:35:09 2025 -0600
+
+    cambios en home
+
+[33mcommit 027ebb6a4964a305228ee26b468dd2dd4a7f0ec8[m
+Author: Albertp <L202307048@vbravo.tecnm.mx>
+Date:   Sun May 25 21:27:58 2025 -0600
+
+    cuadros de equipo
+
+[33mcommit 196339299f8c58f1238186d5cc303be456654490[m
+Author: Albertp <L202307048@vbravo.tecnm.mx>
+Date:   Sat May 24 21:34:03 2025 -0600
+
+    titulos
+
+[33mcommit 15f92e263dbb410694bbd0162ddba7c090aee58d[m
+Author: Albertp <L202307048@vbravo.tecnm.mx>
+Date:   Fri May 23 22:52:18 2025 -0600
+
+    cambio de fondos
+
+[33mcommit ae6fc07589f1f658001ccfa07e436a03408a1f84[m
+Author: Albertp <L202307048@vbravo.tecnm.mx>
+Date:   Fri May 23 22:30:16 2025 -0600
+
+    Cambio de imagenes
+
+[33mcommit bc71081d6d06b0e351c0d93b3015e89262ac22e3[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Wed May 21 22:48:02 2025 -0600
+
+    Ultima fase 21/05/2025
+
+[33mcommit 8135208492ed290f39b6cba38d251941afc65969[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Wed May 21 22:06:12 2025 -0600
+
+    Ultima fase
+
+[33mcommit eaecb1ee65c877056bd348da7d958b8008938551[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Mon May 19 09:26:39 2025 -0600
+
+    mejoras 19/05/2025
+
+[33mcommit 8ded225f746bb37d2a0c7e84dba4b13a4a6c93c2[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Mon May 12 08:39:14 2025 -0600
+
+    12/05/2025
+
+[33mcommit 463a36829294a25fc35054f5ed2824798e2e4c01[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Sat May 10 07:51:57 2025 -0600
+
+    Cruds Funcionales Actualizacion 10/05/2025
+
+[33mcommit 3c0f924fcbf70b2abbf86f4cc7fadc540da9b720[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Fri May 2 12:02:06 2025 -0600
+
+    Mejora de seccion de compras STS
+
+[33mcommit 22150840e8bdb0346607861c98983fe17d04a7a7[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Thu May 1 10:16:48 2025 -0600
+
+    Seccion de compra STS
+
+[33mcommit 7e5c8cf90d2fddb7ac86530d4c73c19847de327a[m
+Author: DiegoCacique007 <L202307055@vbravo.tecnm.mx>
+Date:   Mon Apr 7 09:18:53 2025 -0600
+
+    version1 07/04/2025
+
+[33mcommit b80e967c9c0294dff549da9e20c5da710281be8e[m
+Author: DiegoCacique007 <L202307055@vbravo.tecnm.mx>
+Date:   Sat Apr 5 20:52:47 2025 -0600
+
+    CHARALASTRA :)
+
+[33mcommit 3d9e588eaacab88a256b404e1c9b552cbb564e44[m
+Author: DiegoCacique007 <L202307055@vbravo.tecnm.mx>
+Date:   Sat Apr 5 16:10:02 2025 -0600
+
+    CHARALASTRA
+
+[33mcommit 12c57b0bbba905b47b40ab0e716419d4e78b6be7[m
+Merge: 87c5ed8 33f9eb7
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Sat Apr 5 12:26:31 2025 -0600
+
+    El diego borro todo lo que hice
+
+[33mcommit 87c5ed8e44a423ba801938c3d9fc7ebd7344cc24[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Sat Apr 5 12:25:32 2025 -0600
+
+    El diego borro todo lo que hice
+
+[33mcommit 33f9eb780642802c233002468913008e4d3866ea[m
+Author: DiegoCacique007 <L202307055@vbravo.tecnm.mx>
+Date:   Fri Apr 4 22:58:21 2025 -0600
+
+    Resuelvo conflictos después del pull
+
+[33mcommit 6cc68e62201c752fb1d6e37eb30fca4878915b00[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Fri Apr 4 15:06:12 2025 -0600
+
+    Mejora de Tienda2
+
+[33mcommit b6688429ef84c59e54264a0e9d444162cf3c73ed[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Fri Apr 4 14:32:22 2025 -0600
+
+    Mejora de Tienda
+
+[33mcommit 794a404da5095a591e710256a9c74276ba7aca1c[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Fri Apr 4 11:34:15 2025 -0600
+
+    Nueva tienda
+
+[33mcommit cce20820ffc6fb6f1674b94e613f79ff91c91490[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Thu Apr 3 12:45:04 2025 -0600
+
+    Botones linkeados
+
+[33mcommit 762a70448d6d4268701b56429696c0c24eb82b70[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Thu Apr 3 12:31:30 2025 -0600
+
+    Botones linkeados
+
+[33mcommit 434409c2caebc765df21d0bc2233056ea46bc2fd[m
+Author: DiegoCacique007 <L202307055@vbravo.tecnm.mx>
+Date:   Thu Apr 3 01:07:31 2025 -0600
+
+    Home
+
+[33mcommit eb13310868ccc7d3625069f7c8079af143b584f0[m
+Author: DiegoCacique007 <L202307055@vbravo.tecnm.mx>
+Date:   Thu Apr 3 00:46:03 2025 -0600
+
+    Home
+
+[33mcommit f7cea420b97f46f781980d5d159eb61b1d33a452[m
+Author: alberto <albertojorban@gmail.com>
+Date:   Wed Apr 2 21:08:19 2025 -0600
+
+    Alberto_modificacion1
+
+[33mcommit f047cefb673dc1693e55604b2d8c6ec46515fc59[m
+Author: alberto <albertojorban@gmail.com>
+Date:   Wed Apr 2 20:32:49 2025 -0600
+
+    Alberto_modificacion1
+
+[33mcommit 586b237fcabe8e3efe62f5cab2ac4f787364baa6[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Wed Apr 2 16:33:32 2025 -0600
+
+    Carlos: Administracion2
+
+[33mcommit 193865e1a0aac851307d1a3288f7bb96a498ceb0[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Wed Apr 2 16:12:19 2025 -0600
+
+    Carlos: Administracion
+
+[33mcommit 17495e696f097de5d00cd14980b40a88cacf7441[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Wed Apr 2 14:21:21 2025 -0600
+
+    Carlos: Administracion
+
+[33mcommit 5c0553fc1f0ed70f0a86a57b44dcfaa62951fa53[m
+Author: cdfabilar <carlitoscdfrpollo@gmail.com>
+Date:   Mon Mar 31 08:34:48 2025 -0600
+
+    RepositorioABP

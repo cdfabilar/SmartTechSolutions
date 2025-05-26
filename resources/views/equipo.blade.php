@@ -150,7 +150,7 @@
         .card {
     border: none;
     border-radius: 15px;
-    background-color: rgba(108, 243, 130, 0.5);
+    background-color: rgba(253, 255, 253, 0.5);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

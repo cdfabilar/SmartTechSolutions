@@ -21,7 +21,7 @@
     }
 
     h1 {
-        color: #b30000;
+        color:rgb(49, 107, 214);
         font-weight: 700;
         letter-spacing: 1px;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);

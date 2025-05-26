@@ -123,7 +123,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <a href="{{ route('ventas.create') }}" class="btn btn-primary mb-3">Registrar Nueva Venta</a>
+    <a href="{{ route('ventas.create') }}" class="btn btn-primary mb-3">+ Registrar Nueva Venta</a>
 
     <div class="table-container">
         <table class="table table-bordered align-middle">

@@ -43,13 +43,7 @@
         background-color: #28a745;
         color: white;
     }
-    .card {
-    border: none;
-    border-radius: 15px;
-    background-color: rgba(117, 245, 117, 0.5);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    
 </style>
 
 

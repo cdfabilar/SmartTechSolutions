@@ -19,10 +19,7 @@
         font-weight: bold;
         font-size: 2.8rem;
     }
-    .grosor {
-        text-shadow: 1px 1px 0 #000;
-        letter-spacing: 0.5px;
-    }
+
     .hero p {
         font-size: 1.2rem;
         opacity: 0.95;
@@ -46,10 +43,13 @@
         background-color: #28a745;
         color: white;
     }
-    .titulo-negro {
-        font-weight: 700;
-        color: #000;
-    }
+    .card {
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(117, 245, 117, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 </style>
 
 
@@ -90,7 +90,7 @@
 
 <section id="productos" class="py-5">
     <div class="container">
-    <h2 class="text-center titulo-negro">Nuestras Soluciones</h2>
+        <h2 class="text-center fw-bold mb-5">Nuestros Generadores</h2>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             @foreach($productos as $producto)
